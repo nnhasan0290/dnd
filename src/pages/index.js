@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import itemTypes from "@/utils/itemTypes";
+import Head from "next/head";
+import { DndProvider, useDrag } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -14,32 +13,36 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     <div>
-      <h2 className='font-[700] text-center text-2xl border-b pb-2'>Drag and Drop</h2>
-      <div className='list-none flex justify-between '>
-        <div className='border p-3 m-3 basis-[300px] rounded-sm'>
-          <h2 className='font-[600] text-xl border-b'>To do</h2>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
+      <DndProvider backend={HTML5Backend}>
+        <div>
+          <h2 className="font-[700] text-center text-2xl border-b pb-2">
+            Drag and Drop
+          </h2>
+          <div className="flex justify-between list-none">
+            <div className="border p-3 m-3 basis-[300px] rounded-sm">
+              <h2 className="font-[600] text-xl border-b">To do</h2>
+              <li  className="p-3 my-1 rounded-md border">todo one</li>
+              <li className="p-3 my-1 rounded-md border">todo two</li>
+              <li className="p-3 my-1 rounded-md border">todo three</li>
+              <li className="p-3 my-1 rounded-md border">todo four</li>
+            </div>
+            <div className="border p-3 m-3 basis-[300px] rounded-sm">
+              <h2 className="font-[600] text-xl border-b">Ongoing</h2>
+              <li className="p-3 my-1 rounded-md border">ongo one</li>
+              <li className="p-3 my-1 rounded-md border">ongo two</li>
+              <li className="p-3 my-1 rounded-md border">ongo three</li>
+              <li className="p-3 my-1 rounded-md border">ongo four</li>
+            </div>
+            <div className="border p-3 m-3 basis-[300px] rounded-sm">
+              <h2 className="font-[600] text-xl border-b">Done</h2>
+              <li className="p-3 my-1 rounded-md border">done one</li>
+              <li className="p-3 my-1 rounded-md border">done two</li>
+              <li className="p-3 my-1 rounded-md border">done three</li>
+              <li className="p-3 my-1 rounded-md border">done four</li>
+            </div>
+          </div>
         </div>
-        <div className='border p-3 m-3 basis-[300px] rounded-sm'>
-          <h2 className='font-[600] text-xl border-b'>To do</h2>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-        </div>
-        <div className='border p-3 m-3 basis-[300px] rounded-sm'>
-          <h2 className='font-[600] text-xl border-b'>To do</h2>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-          <li className='border rounded-md p-3 my-1'>Option</li>
-        </div>
-      </div>
-     </div>
+      </DndProvider>
     </>
-  )
+  );
 }
