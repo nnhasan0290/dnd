@@ -2,7 +2,7 @@ import itemTypes from "@/utils/itemTypes";
 import Head from "next/head";
 import { DndProvider, useDrag } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-
+import Movable from "./MovableCom";
 
 export default function Home() {
   return (
@@ -21,10 +21,10 @@ export default function Home() {
           <div className="flex justify-between list-none">
             <div className="border p-3 m-3 basis-[300px] rounded-sm">
               <h2 className="font-[600] text-xl border-b">To do</h2>
-              <li  className="p-3 my-1 rounded-md border">todo one</li>
-              <li className="p-3 my-1 rounded-md border">todo two</li>
-              <li className="p-3 my-1 rounded-md border">todo three</li>
-              <li className="p-3 my-1 rounded-md border">todo four</li>
+              <Movable text={"todo one"} />
+              <Movable text={"todo two"} />
+              <Movable text={"todo three"} />
+              <Movable text={"todo four"} />
             </div>
             <div className="border p-3 m-3 basis-[300px] rounded-sm">
               <h2 className="font-[600] text-xl border-b">Ongoing</h2>
