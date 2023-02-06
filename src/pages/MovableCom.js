@@ -2,8 +2,11 @@ import { useDrag } from "react-dnd";
 
 const Movable = ({ text }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
-    type: "irrelevant",
-    item: "item",
+    type: "first_type",
+    item: {
+      id: 1,
+      name: "movable name"
+    },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
